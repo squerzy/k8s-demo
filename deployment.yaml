@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: myimage
+  name: myimage
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: myimage
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: myimage
+    spec:
+      containers:
+      - image: myimage:latest
+        name: myimage
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5555
+        resources: {}
+status: {}
